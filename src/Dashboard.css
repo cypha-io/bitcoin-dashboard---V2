@@ -1,0 +1,223 @@
+.Dashboard {
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.Navbar {
+    background-color: #282c34;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.Main {
+    display: flex;
+    flex: 1;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.Sidebar {
+    background-color: #f7931a; /* Bitcoin color */
+    padding: 1rem;
+    width: 150px; /* Smaller width */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.Bitcoin-logo {
+    width: 80px; /* Adjusted size */
+    margin-bottom: 1rem;
+}
+
+.Faint-line {
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Faint line */
+    margin-bottom: 1rem;
+}
+
+.Sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.Sidebar li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1rem; /* Adjusted font size */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.Sidebar li a,
+.Sidebar li button {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.Sidebar li a:hover,
+.Sidebar li button:hover {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.Sidebar li svg {
+    margin-right: 0.5rem;
+}
+
+.Sidebar .login-link,
+.Sidebar .signup-link {
+    background-color: #e67e22;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Sidebar .login-link:hover,
+.Sidebar .signup-link:hover {
+    background-color: #d35400;
+}
+
+.Content {
+    flex: 1;
+    padding: 2rem;
+    margin-left: 150px; /* Adjust for fixed sidebar */
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.Background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://source.unsplash.com/random/1600x900');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.Background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.Background-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Cards {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.Card {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 0.5rem;
+    text-align: center;
+    max-width: 200px;
+}
+
+.Card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #f7931a; /* Bitcoin color */
+}
+
+.Slider {
+    width: 100%;
+    margin: 1rem 0;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #f7931a; /* Bitcoin color */
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.Slider:hover {
+    opacity: 1;
+}
+
+.Slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #e67e22;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.Slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #e67e22;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.Chart {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+.Cartoon-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.earnbitcoin-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}

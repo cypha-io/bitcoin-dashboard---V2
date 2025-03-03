@@ -1,0 +1,143 @@
+.Dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+.Main {
+    display: flex;
+    flex: 1;
+}
+
+.Sidebar {
+    background-color: #f7931a; /* Bitcoin color */
+    padding: 1rem;
+    width: 150px; /* Smaller width */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.Bitcoin-logo {
+    width: 80px; /* Adjusted size */
+    margin-bottom: 1rem;
+}
+
+.Faint-line {
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Faint line */
+    margin-bottom: 1rem;
+}
+
+.Sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.Sidebar li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1rem; /* Adjusted font size */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.Sidebar li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.Sidebar li a:hover {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.Sidebar li svg {
+    margin-right: 0.5rem;
+}
+
+.Content {
+    flex: 1;
+    padding: 2rem;
+    margin-left: 150px; /* Adjust for fixed sidebar */
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Cards {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.Card {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 0.5rem;
+    text-align: center;
+    max-width: 200px;
+}
+
+.Card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #f7931a; /* Bitcoin color */
+}
+
+.Slider {
+    width: 100%;
+    margin: 1rem 0;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #f7931a; /* Bitcoin color */
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.Slider:hover {
+    opacity: 1;
+}
+
+.Slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #e67e22;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.Slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #e67e22;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.Chart {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
