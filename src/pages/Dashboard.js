@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Dashboard.css';
-import { FaSignInAlt, FaLifeRing, FaEnvelope, FaInfoCircle, FaUserPlus, FaBook, FaSearch, FaNewspaper, FaBitcoin } from 'react-icons/fa';
+import { FaSignInAlt, FaUserPlus, FaBitcoin } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Modal from '../components/Modal';
 import Login from './Login';
@@ -9,6 +9,8 @@ import CreateAccount from './CreateAccount';
 function Dashboard() {
     const [isLoginOpen, setIsLoginOpen] = useState(false);
     const [isCreateAccountOpen, setIsCreateAccountOpen] = useState(false);
+
+    console.log("Image path:", `${process.env.PUBLIC_URL}/earnbitcouin.webp`);
 
     return (
         <div className="Dashboard">
@@ -20,17 +22,11 @@ function Dashboard() {
                         <li><Link to="#" className="Sidebar-button login-link" onClick={() => setIsLoginOpen(true)}><FaSignInAlt /> Login</Link></li>
                         <li><Link to="#" className="Sidebar-button signup-link" onClick={() => setIsCreateAccountOpen(true)}><FaUserPlus /> Signup</Link></li>
                         <li><Link to="/buy-bitcoin" className="Sidebar-button"><FaBitcoin /> Buy Bitcoin</Link></li>
-                        <li><Link to="/learn" className="Sidebar-button"><FaBook /> Learn</Link></li>
-                        <li><Link to="/research" className="Sidebar-button"><FaSearch /> Research</Link></li>
-                        <li><Link to="/news" className="Sidebar-button"><FaNewspaper /> News</Link></li>
-                        <li><Link to="/support" className="Sidebar-button"><FaLifeRing /> Support</Link></li>
-                        <li><Link to="/contact" className="Sidebar-button"><FaEnvelope /> Contact</Link></li>
-                        <li><Link to="/about" className="Sidebar-button"><FaInfoCircle /> About</Link></li>
                     </ul>
                 </aside>
                 <section className="Content">
                     <div className="Background-image">
-                        <img src="/earnbitcoin.webp" alt="Earn Bitcoin" className="Cartoon-image" />
+                        <img src={`${process.env.PUBLIC_URL}/earnbitcoin.webp`} alt="Maps" className="EarnBitcoin-image" onError={(e) => { e.target.onerror = null; e.target.src = "https://via.placeholder.com/150"; }} />
                     </div>
                 </section>
             </div>

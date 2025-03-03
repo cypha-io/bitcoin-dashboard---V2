@@ -1,0 +1,210 @@
+.UserDashboard {
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.Main {
+    display: flex;
+    flex: 1;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.Sidebar {
+    background-color: #f7931a; /* Bitcoin color */
+    padding: 1rem;
+    width: 150px; /* Smaller width */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: hidden; /* Prevent scrolling */
+    z-index: 10; /* Ensure sidebar is on top */
+}
+
+.Bitcoin-logo {
+    width: 80px; /* Adjusted size */
+    margin-bottom: 1rem;
+}
+
+.Faint-line {
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Faint line */
+    margin-bottom: 1rem;
+}
+
+.Sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.Sidebar li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1rem; /* Adjusted font size */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.Sidebar li a,
+.Sidebar li button {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.Sidebar li a:hover,
+.Sidebar li button:hover {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.Sidebar li svg {
+    margin-right: 0.5rem;
+}
+
+.Content {
+    flex: 1;
+    padding: 2rem;
+    margin-left: 150px; /* Adjust for fixed sidebar */
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Prevent scrolling */
+    z-index: 1; /* Ensure content is below sidebar */
+}
+
+.Background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+.EarnBitcoin-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.Header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.Notifications {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.Notification-icon {
+    font-size: 1.5rem;
+    color: #f7931a; /* Bitcoin color */
+}
+
+.Notification-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+.Cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.Card {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0.5rem;
+    text-align: center;
+    max-width: 200px;
+}
+
+.Card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #f7931a; /* Bitcoin color */
+}
+
+.Chart {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 1rem; /* Adjusted margin to bring the chart up */
+    margin-bottom: 2.5rem; /* Ensure there is space at the bottom */
+}
+
+.Chart-icon {
+    font-size: 2rem;
+    color: #f7931a; /* Bitcoin color */
+    margin-bottom: 1rem;
+}
+
+.Chart-placeholder {
+    height: 200px;
+    background-color: #f4f4f4;
+    border: 1px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    .Sidebar {
+        width: 100px; /* Adjust width for smaller screens */
+    }
+
+    .Content {
+        margin-left: 100px; /* Adjust for fixed sidebar */
+        padding: 1rem;
+    }
+
+    .Header h1 {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .Card {
+        max-width: 150px; /* Adjust card size for smaller screens */
+    }
+
+    .Chart-placeholder {
+        height: 150px; /* Adjust chart placeholder size for smaller screens */
+    }
+}

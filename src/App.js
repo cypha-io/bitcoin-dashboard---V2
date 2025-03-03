@@ -12,6 +12,7 @@ import Learn from './pages/Learn';
 import Research from './pages/Research';
 import News from './pages/News';
 import BuyBitcoin from './pages/BuyBitcoin';
+import UserDashboard from './pages/UserDashboard'; // Import UserDashboard
 import Modal from './components/Modal';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
                     <Route path="/research" element={<Research />} />
                     <Route path="/news" element={<News />} />
                     <Route path="/buy-bitcoin" element={<BuyBitcoin />} />
+                    <Route path="/user-dashboard" element={<UserDashboard />} /> {/* Add this line */}
                 </Routes>
                 <Modal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)}>
                     <Login />
