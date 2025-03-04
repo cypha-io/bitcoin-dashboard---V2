@@ -52,6 +52,8 @@ function App() {
         <AuthProvider>
             <Router>
                 <div className="App">
+                    <title>BitVest</title>
+                    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" />
                     {notification && (
                         <div className={`Notification-popup ${notificationDone ? 'done' : ''}`}>
                             <div className="Loader"></div>

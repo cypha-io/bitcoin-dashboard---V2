@@ -97,7 +97,7 @@ function UserDashboard() {
                 </aside>
                 <section className="Content">
                     <div className="Header">
-                        <h1>Welcome to Your Dashboard</h1>
+                        <h1>Welcome to Your BitVest Dashboard</h1>
                         <div className="Notifications">
                             <FaBell className="Notification-icon" />
                             <span className="Notification-count">3</span>
