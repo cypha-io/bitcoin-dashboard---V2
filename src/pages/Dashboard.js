@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './Dashboard.css';
-import { FaSignInAlt, FaUserPlus, FaBitcoin } from 'react-icons/fa';
+import { FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Modal from '../components/Modal';
 import Login from './Login';
 import CreateAccount from './CreateAccount';
 
-function Dashboard() {
+function Dashboard({ setNotification }) {
     const [isLoginOpen, setIsLoginOpen] = useState(false);
     const [isCreateAccountOpen, setIsCreateAccountOpen] = useState(false);
 
@@ -21,7 +21,6 @@ function Dashboard() {
                     <ul>
                         <li><Link to="#" className="Sidebar-button login-link" onClick={() => setIsLoginOpen(true)}><FaSignInAlt /> Login</Link></li>
                         <li><Link to="#" className="Sidebar-button signup-link" onClick={() => setIsCreateAccountOpen(true)}><FaUserPlus /> Signup</Link></li>
-                        <li><Link to="/buy-bitcoin" className="Sidebar-button"><FaBitcoin /> Buy Bitcoin</Link></li>
                     </ul>
                 </aside>
                 <section className="Content">
@@ -31,10 +30,10 @@ function Dashboard() {
                 </section>
             </div>
             <Modal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)}>
-                <Login />
+                <Login onClose={() => setIsLoginOpen(false)} setNotification={setNotification} />
             </Modal>
             <Modal isOpen={isCreateAccountOpen} onClose={() => setIsCreateAccountOpen(false)}>
-                <CreateAccount />
+                <CreateAccount onClose={() => setIsCreateAccountOpen(false)} setNotification={setNotification} />
             </Modal>
         </div>
     );

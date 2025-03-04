@@ -5,10 +5,10 @@ function Modal({ isOpen, onClose, children }) {
     if (!isOpen) return null;
 
     return (
-        <div className="Modal-overlay">
-            <div className="Modal">
-                <button className="Modal-close" onClick={onClose}>×</button>
-                {children}
+        <div className="modal-overlay" onClick={onClose}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                <button className="modal-close" onClick={onClose}>X</button>
+                {React.cloneElement(children, { onClose })}
             </div>
         </div>
     );
