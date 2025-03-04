@@ -8,7 +8,7 @@ function UserDashboard() {
     const [data, setData] = useState([
         { name: 'Jan', investment: 0, balance: 0 },
         { name: 'Feb', investment: 0, balance: 0 },
-        { name: 'Mar', investment: 994.00, balance: 1054.00 },
+        { name: 'Mar', investment: 0, balance: 0 },
         { name: 'Apr', investment: 0, balance: 0 },
         { name: 'May', investment: 0, balance: 0 },
     ]);
