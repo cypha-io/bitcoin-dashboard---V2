@@ -4,7 +4,7 @@ import bcrypt from 'bcryptjs'; // Use bcryptjs for frontend compatibility
 
 export async function signUp(name, email) {
   try {
-    const response = await fetch('https://your-app-name.herokuapp.com/create-account', {
+    const response = await fetch('/api/create-account', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -25,13 +25,25 @@ export async function signUp(name, email) {
   }
 }
 
-export const login = async (username, password) => {
-  // Simulate a backend call
-  const users = JSON.parse(localStorage.getItem('users')) || [];
-  const user = users.find(user => user.username === username);
-  if (user && await bcrypt.compare(password, user.password)) {
-    return 'Login successful';
-  } else {
-    return 'Invalid username or password';
+export const login = async (email, password) => {
+  try {
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      return 'Login successful';
+    } else {
+      console.error('Server error:', data.error);
+      return data.message || 'Invalid email or password';
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    return 'Login failed';
   }
 };
