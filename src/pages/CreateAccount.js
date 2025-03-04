@@ -7,8 +7,8 @@ function CreateAccount({ onClose, setNotification }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const { name, email } = event.target.elements;
-    const result = await signUp(name.value, email.value);
+    const { name, email, password } = event.target.elements;
+    const result = await signUp(name.value, email.value, password.value);
     setMessage(result);
     if (result === 'User registered successfully') {
       onClose();

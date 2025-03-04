@@ -11,11 +11,11 @@ function Login({ onClose, setNotification }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const { username, password } = event.target.elements;
-    const result = await authenticate(username.value, password.value);
+    const { email, password } = event.target.elements;
+    const result = await authenticate(email.value, password.value);
     setMessage(result);
     if (result === 'Login successful') {
-      login();
+      login(email.value, password.value);
       onClose();
       setNotification('Login successful');
       navigate('/user-dashboard');
@@ -28,8 +28,8 @@ function Login({ onClose, setNotification }) {
     <div className="Auth">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username:</label>
-        <input type="text" id="username" name="username" required />
+        <label htmlFor="email">Email:</label>
+        <input type="email" id="email" name="email" required />
         <label htmlFor="password">Password:</label>
         <input type="password" id="password" name="password" required />
         <button type="submit">Login</button>
