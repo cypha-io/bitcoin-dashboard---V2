@@ -6,16 +6,16 @@ const YourComponent = () => {
 
     useEffect(() => {
         const fetchUsers = async () => {
-            const response = await axios.get('/api/new-users');
+            const response = await axios.get('/api/users');
             setUsers(response.data);
         };
         fetchUsers();
     }, []);
 
     const saveUser = async (user) => {
-        await axios.post('/api/new-users', user);
+        await axios.post('/api/users', user);
         // Optionally, refetch users after saving
-        const response = await axios.get('/api/new-users');
+        const response = await axios.get('/api/users');
         setUsers(response.data);
     };
 

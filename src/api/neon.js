@@ -2,6 +2,7 @@ import { Client } from 'pg';
 
 const client = new Client({
     connectionString: process.env.NEON_DATABASE_URL,
+    database: 'Bitcoin'
 });
 
 client.connect();

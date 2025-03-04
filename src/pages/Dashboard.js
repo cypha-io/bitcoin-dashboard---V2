@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './Dashboard.css';
 import { FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Modal from '../components/Modal';
-import Login from './Login';
-import CreateAccount from './CreateAccount';
+import Modal from '../components/Modal.js';
+import Login from './Login.js';
+import CreateAccount from './CreateAccount.js';
 
 function Dashboard({ setNotification }) {
     const [isLoginOpen, setIsLoginOpen] = useState(false);

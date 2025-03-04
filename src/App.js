@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import './App.css';
-import CreateAccount from './pages/CreateAccount';
-import Dashboard from './pages/Dashboard';
-import Support from './pages/Support';
-import Contact from './pages/Contact';
-import About from './pages/About';
-import Learn from './pages/Learn';
-import Research from './pages/Research';
-import News from './pages/News';
-import BuyBitcoin from './pages/BuyBitcoin';
-import UserDashboard from './pages/UserDashboard';
-import Modal from './components/Modal';
-import Login from './pages/Login';
-import { AuthProvider, useAuth } from './contexts/AuthContext';
+import CreateAccount from './pages/CreateAccount.js';
+import Dashboard from './pages/Dashboard.js';
+import Support from './pages/Support.js';
+import Contact from './pages/Contact.js';
+import About from './pages/About.js';
+import Learn from './pages/Learn.js';
+import Research from './pages/Research.js';
+import News from './pages/News.js';
+import BuyBitcoin from './pages/BuyBitcoin.js';
+import UserDashboard from './pages/UserDashboard.js';
+import Modal from './components/Modal.js';
+import Login from './pages/Login.js';
+import { AuthProvider, useAuth } from './contexts/AuthContext.js';
 import { FaTimes } from 'react-icons/fa';
 
 function PrivateRoute({ children, setWarning }) {

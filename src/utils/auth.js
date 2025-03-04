@@ -1,27 +1,37 @@
-const getUsers = () => {
-    const users = localStorage.getItem('users');
-    return users ? JSON.parse(users) : [];
-};
+import bcrypt from 'bcryptjs'; // Use bcryptjs for frontend compatibility
 
-const saveUsers = (users) => {
-    localStorage.setItem('users', JSON.stringify(users));
-};
+// Removed database connection logic as it should be handled in the backend
 
-export function signUp(username, password) {
-    const users = getUsers();
-    if (users.find(user => user.username === username)) {
-        return 'Username already exists';
+export async function signUp(name, email) {
+  try {
+    const response = await fetch('https://your-app-name.herokuapp.com/create-account', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email }),
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      return 'User registered successfully';
+    } else {
+      console.error('Server error:', data.error);
+      return data.message || 'Account creation failed';
     }
-    users.push({ username, password });
-    saveUsers(users);
-    return 'User registered successfully';
+  } catch (error) {
+    console.error('Error:', error);
+    return 'Account creation failed';
+  }
 }
 
-export function login(username, password) {
-    const users = getUsers();
-    const user = users.find(user => user.username === username && user.password === password);
-    if (user) {
-        return 'Login successful';
-    }
+export const login = async (username, password) => {
+  // Simulate a backend call
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+  const user = users.find(user => user.username === username);
+  if (user && await bcrypt.compare(password, user.password)) {
+    return 'Login successful';
+  } else {
     return 'Invalid username or password';
-}
+  }
+};
