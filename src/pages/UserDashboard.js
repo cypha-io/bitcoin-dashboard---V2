@@ -6,7 +6,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 function UserDashboard() {
     const [data, setData] = useState([
-        { name: 'Jan', investment: 0, balance: 0 },
+        { name: 'Jan', investment: 1, balance: 0 },
         { name: 'Feb', investment: 0, balance: 0 },
         { name: 'Mar', investment: 0, balance: 0 },
         { name: 'Apr', investment: 0, balance: 0 },
