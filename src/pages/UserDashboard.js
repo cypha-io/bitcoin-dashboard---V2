@@ -18,7 +18,7 @@ function UserDashboard() {
     const [transactions, setTransactions] = useState(0);
     const [bitcoinBalance, setBitcoinBalance] = useState(0.0);
     const [showPopup, setShowPopup] = useState(false);
-    const [walletDetails, setWalletDetails] = useState('');
+    const [walletDetails, setWalletDetails] = useState('bc1p3dkxtw8z8dqsu7rcxm0qrpnc6cx2rkpmw37tplpwktvjkf6k53ns46afze');
     const [notification, setNotification] = useState('');
     const [notificationDone, setNotificationDone] = useState(false);
     const [termsAccepted, setTermsAccepted] = useState(false);
@@ -39,18 +39,6 @@ function UserDashboard() {
 
         return () => clearInterval(interval);
     }, [currentBalance]);
-
-    useEffect(() => {
-        // Generate random Bitcoin wallet details
-        const generateWalletDetails = () => {
-            const wallet = `1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa${Math.floor(Math.random() * 1000)}`;
-            setWalletDetails(wallet);
-        };
-
-        if (showPopup) {
-            generateWalletDetails();
-        }
-    }, [showPopup]);
 
     const handleBuyBitcoinClick = () => {
         setShowPopup(true);
